@@ -1,0 +1,38 @@
+<script type="text/javascript" src="jquery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="jquery/jquery.ui.core.js"></script>
+<script type="text/javascript" src="jquery/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="jquery/jquery.ui.position.js"></script>
+<script type="text/javascript" src="jquery/jquery.ui.autocomplete.js"></script>
+<script>
+$(function() {
+    $("#autosearch").autocomplete({
+        source: function( request, response ) {
+            $.ajax({
+            url: "http://localhost:8983/solr/select",
+            data: { 
+                q: "defaultCommonName:"+request.term,
+                fl: "defaultCommonNameString",
+                wt: 'json',
+             }, 
+             dataType: "jsonp",
+             jsonp: 'json.wrf',
+
+             success: function( data ) {
+                response($.map(data.response.docs, function( item ) { 
+                    return { 
+                        label: item.defaultCommonNameString,
+                        value: item.defaultCommonNameString,
+                    }; 
+            }));
+            }
+          }); 
+         },
+        minLength: 1
+        });
+    });
+</SCRIPT>
+</head>
+<body>
+<label for="autosearch">Search Here :  </label>
+<input id="autosearch"/>
+</body>

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+    <head> <center><div style="color:white;background-color:black;">
+	<h2>Welcome new Concert !!</h1></div>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <title> Create Concert</title>
+     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+     <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	 	  <script language="JavaScript"> 
+function CheckForm_onclick()
+{
+   var myForm = document.reg;
+
+   
+  if (myForm.bname.value == "" || myForm.desc.value == "")
+   {
+      document.write("missing value!");
+      if (myForm.bname.value == "")
+      {
+         myForm.bname.focus();
+      }
+      else
+      {
+         myForm.desc.focus();
+      }
+   }
+   else
+   {
+      document.write(myForm.txtName.value);
+   }
+}
+function txtAge_onblur()
+{
+   var txtAge = document.form1.txtAge;
+   if (isNaN(txtAge.value) == true)
+   {
+      alert("Age must be a number.");
+      txtAge.focus();
+      txtAge.select();
+   }
+}
+}</script>
+      <script>
+
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
+  </head>
+    <body >
+	<div id="container">
+	<div id="header">
+		<h1>
+			CONCERT_ZONE
+		</h1>
+	</div>
+<div id="navigation">
+	<ul>
+		<li ><a href="login.html" >Login</a></li>
+		<li> </li>
+	</ul>
+</div> 
+
+<div id="content-container1">
+<div id="content-container2">
+<div id="pos_center" style="background-color:#E66FA">
+    <form action="concert_create.php" method="post" name=reg><center>
+						<h2>Concert Details :</h2><br>
+						  Concert Name<br> <input type="text" id=bname name="cname" required/><br /> 
+     	  				  Band name <br> <input type="text" id=desc name="bname" required /><br /><br>
+						  <p> Date of concert <br><input type="text" name=vdate id="datepicker" required/> </P>
+						  
+						  
+		 				  <input id="nav" type="submit" value="Create Band !!" NAME=Create_band onclick="CheckForm_onclick()"/> </div>	
+</form> 
+
+
+</div>
+</div>
+<div id="footer">
+	By- Sachin & Suhas
+</div>
+</div> 
+</body>  	
+
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body >
+<div id="container">
+	<div id="header">
+		<h1>
+			CONCERT_ZONE
+		</h1>
+	</div>
+<div id="content-container1">
+<div id="content-container2">
+
+<div id="log_right">
+<form  action="login.php" method="POST">
+<?php session_start(); unset($_SESSION["user_id"]) ?>
+	Enter your username and password below: <br /><br />
+	Username: <span/> <input  type="text" name="user_id" /><br />
+     Password : <input type="password" name="password" /><br/><br/>
+    <input id="nav" type="submit" value="Log In" /><br></br>
+	Not a member yet ?<br>
+	<a href="register.html"> Register now</a>
+     </form>
+	 </div>
+<form>
+	
+<div id="log_left">
+<h1>Welcome To CONCERT_ZONE</h1>
+	Concert_Zone is an online social network for music lovers. If you love music and you are looking for your band and others who love your band, then you are in the right place. Here you get to search for your bands, your taste of music and find concerts of these bands being held around the world. If you are a member of a band, then you can create a page about your band and post concerts, so that your fans have a place to reach you and know when and where you are playing. As an ardent music lover, you can also create playlists in your name which can be shared around the online portal for users to view, like and comment. For every concert that is happening in the future, you can vote your participation and find out who else are coming. For concerts that you have already attended, you get to vote as to how good the concert was and provide review comments on it.
+
+</div>
+</form>
+</div>
+<div id="footer">
+	By- Sachin & Suhas
+</div>
+</div>
+</div>
+
+</div>
+</body>
+</html>	

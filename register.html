@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Register for Concert</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+ <center><div style="color:white;background-color:black;"></div>
+
+	<meta charset="utf-8">
+
+	 	  <script language="JavaScript"> 
+function CheckForm_onclick()
+{
+   var myForm = document.reg;
+
+   
+  if (myForm.user_id.value == "" || myForm.uname.value == ""|| myForm.password.value == ""|| myForm.dob.value == ""|| myForm.address.value == ""|| myForm.phnum.value == ""|| myForm.email_addr.value == "")
+   {
+      document.write("missing value!");
+      if (myForm.uname.value == "")
+      {
+         myForm.txtName.focus();
+      }
+      else
+      {
+         myForm.user_id.focus();
+      }
+   }
+   else
+   {
+      document.write(myForm.txtName.value);
+   }
+}
+function txtAge_onblur()
+{
+   var txtAge = document.form1.txtAge;
+   if (isNaN(txtAge.value) == true)
+   {
+      alert("Age must be a number.");
+      txtAge.focus();
+      txtAge.select();
+   }
+}
+}</script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
+  </head>
+<body>
+<div id="container">
+	<div id="header">
+		<h1>
+			CONCERT_ZONE
+		</h1>
+	</div>
+<div id="navigation">
+	<ul>
+		<li ><a href="login.html" >Login</a></li>
+		<li> </li>
+	</ul>
+</div> 
+
+<div id="content-container1">
+<div id="content-container2">
+<div id="pos_mid">
+<!-- <form > -->
+
+		<!-- <div id="register"> -->
+    <form action="register.php" method="post" name=reg ><center>
+						<h2><u>User Details </u></h2>
+						  Username<br> <input type="text" id=user_id name="user_id" required/><br /> 
+     	  				  Password <br> <input type="password" name="password" required /><br /> 
+     	  				  Name     <br>            <input type="text" name="uname" required/><br /> 
+						  Date of Birth<br> <input type="text" name=dob id="datepicker"><br/>
+     	  				  Address   <br> <input type="text" name="address" required/><br /> 
+     	  	     	  	  Mobile No.     <br> <input type="text" name=phnum required/><br /> 
+     	  				  Email <br> <input type="text" name=email_addr required /><br />	<br/>	  
+		 				  <input id="nav" type="submit" value="Register !!" NAME=Register onclick="CheckForm_onclick()"/> </div>
+	<!-- </div>					   -->
+
+</form> 
+
+
+</div>
+</div>
+<div id="footer">
+	By- Sachin & Suhas
+</div>
+</div> 
+</body>  
+</html>
