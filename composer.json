@@ -1,7 +1,7 @@
 {
 	"require": {
 	"apache/solr":"4.3.1"
-	}
+	},
 	"authors": {
 	"name":"Sachin"
 	}
